@@ -2,23 +2,23 @@ package com.lee.entity;
 
 import com.baomidou.mybatisplus.annotations.TableField;
 import com.baomidou.mybatisplus.annotations.TableId;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.ToString;
+import com.baomidou.mybatisplus.enums.IdType;
+import lombok.*;
 
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 @EqualsAndHashCode
 @ToString
 public class User {
-
-    @TableId
+    @TableId(value = "id", type = IdType.AUTO)
     private int id;
-    @TableField
+    @TableField("name")
     private String name;
 
-    @TableField
+    @TableField("age")
     private int age;
-    @TableField
+    @TableField("email")
     private String email;
 
 }
